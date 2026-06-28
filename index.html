@@ -11,8 +11,9 @@
         body, html { 
             margin: 0; padding: 0; height: 100vh; width: 100vw;
             overflow: hidden; font-family: 'Inter', sans-serif;
+            /* Updated to match your uploaded filename */
             background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
-                        url('Mount Everest Wallpaper _ HD Wallpaper _ Desktop.jpeg');
+                        url('everest.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -38,8 +39,8 @@
         }
         .ticker-wrapper {
             display: flex; 
-            gap: 40px; /* Tightened gap */
-            animation: marquee 35s linear infinite; /* Adjusted speed for more pairs */
+            gap: 40px;
+            animation: marquee 35s linear infinite;
             width: max-content;
         }
         @keyframes marquee {
@@ -86,7 +87,6 @@
             
             <div class="ticker-container">
                 <div class="ticker-wrapper">
-                    <!-- Set 1 -->
                     <div class="ticker-item">XAUUSD <span class="price-up">2325.50</span></div>
                     <div class="ticker-item">EURUSD <span class="price-down">1.0682</span></div>
                     <div class="ticker-item">NASDAQ100 <span class="price-up">19850.25</span></div>
@@ -97,7 +97,6 @@
                     <div class="ticker-item">USDJPY <span class="price-up">155.60</span></div>
                     <div class="ticker-item">DAX40 <span class="price-down">18200.00</span></div>
                     
-                    <!-- Set 2 (Duplicates for loop) -->
                     <div class="ticker-item">XAUUSD <span class="price-up">2325.50</span></div>
                     <div class="ticker-item">EURUSD <span class="price-down">1.0682</span></div>
                     <div class="ticker-item">NASDAQ100 <span class="price-up">19850.25</span></div>
