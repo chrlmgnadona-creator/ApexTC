@@ -11,22 +11,10 @@
         body, html { 
             margin: 0; padding: 0; height: 100vh; width: 100vw;
             overflow: hidden; font-family: 'Inter', sans-serif;
-            background: url('everest.jpeg') no-repeat center center fixed;
-            background-size: cover; color: #ffffff;
-        }
-
-        /* Moving Background Layer */
-        .bg-anim {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(255,215,0,0.1), rgba(0,0,0,0.8));
-            background-size: 400% 400%;
-            animation: moveGradient 15s ease infinite;
-            z-index: -1;
-        }
-        @keyframes moveGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
+                        url('everest.jpeg');
+            background-size: cover; background-position: center;
+            background-attachment: fixed; color: #ffffff;
         }
 
         .main-wrapper { 
@@ -119,8 +107,6 @@
 </head>
 <body>
 
-<div class="bg-anim"></div>
-
 <div class="main-wrapper">
     <header>
         <div class="brand-group">
@@ -128,7 +114,8 @@
             <div class="brand-sub">Founded by Charlemagne Company</div>
         </div>
         <div class="ticker-container">
-            <div class="ticker-wrapper" id="ticker-content"></div>
+            <div class="ticker-wrapper" id="ticker-content">
+                </div>
         </div>
         <div class="nav-links">
             <a href="algorithms.html">Algorithms</a>
@@ -180,6 +167,7 @@
         {n: "DAX40", p: "18200.00", d: "Pullback Active"}, {n: "AUDUSD", p: "0.6650", d: "Commodity Sensitivity"}
     ];
 
+    // Initialize Ticker
     const ticker = document.getElementById('ticker-content');
     pairs.forEach(pair => {
         ticker.innerHTML += `<div class="ticker-item" onclick="showAll()">
@@ -187,6 +175,7 @@
         </div>`;
     });
 
+    // Initialize Chart
     new TradingView.widget({"autosize":true, "symbol":"OANDA:XAUUSD", "interval":"D", "theme":"dark", "style":"1", "container_id":"tradingview_chart"});
 
     function showInfo(title, text) {
