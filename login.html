@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Log-in | ApexTC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(15, 17, 21, 0.7), rgba(15, 17, 21, 0.7)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            animation: slowZoom 30s ease-in-out infinite alternate;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #f59e0b;
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 100;
+            transition: 0.3s;
+        }
+        .back-arrow:hover { color: #fff; transform: translateX(-5px); }
+
+        @keyframes slowZoom {
+            0% { background-size: 100% 100%; }
+            100% { background-size: 110% 110%; }
+        }
+        
+        .form-container {
+            background: rgba(26, 29, 35, 0.85);
+            padding: 50px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        h2 { margin-top: 0; color: #f59e0b; font-weight: 600; }
+        p { color: #94a3b8; margin-bottom: 30px; font-size: 1rem; font-weight: 400; }
+        
+        .input-group { position: relative; width: 100%; }
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            background: #0f1115;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            cursor: pointer;
+            color: #666;
+        }
+        .toggle-password:hover { color: #f59e0b; }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+        .forgot-password:hover { color: #f59e0b; }
+
+        .apex-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #000;
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+        .apex-btn:hover { box-shadow: 0 0 30px rgba(245, 158, 11, 0.9); }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+
+    <div class="form-container">
+        <h2>Member Log-in</h2>
+        <p>Sign in to your ApexTC account.</p>
+
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class="fas fa-eye toggle-password" onclick="toggleVisibility('password')"></i>
+            </div>
+            
+            <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+            
+            <button type="submit" class="apex-btn">SIGN IN</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleVisibility(id) {
+            const input = document.getElementById(id);
+            const icon = event.target;
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>
