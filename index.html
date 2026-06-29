@@ -15,6 +15,14 @@
                         url('everest.jpeg');
             background-size: cover; background-position: center;
             background-attachment: fixed; color: #ffffff;
+            /* Added background animation */
+            animation: slowZoom 30s ease-in-out infinite alternate;
+        }
+
+        /* Animation for the background */
+        @keyframes slowZoom {
+            0% { background-size: 100% 100%; }
+            100% { background-size: 110% 110%; }
         }
 
         .main-wrapper { 
@@ -167,7 +175,6 @@
         {n: "DAX40", p: "18200.00", d: "Pullback Active"}, {n: "AUDUSD", p: "0.6650", d: "Commodity Sensitivity"}
     ];
 
-    // Initialize Ticker
     const ticker = document.getElementById('ticker-content');
     pairs.forEach(pair => {
         ticker.innerHTML += `<div class="ticker-item" onclick="showAll()">
@@ -175,7 +182,6 @@
         </div>`;
     });
 
-    // Initialize Chart
     new TradingView.widget({"autosize":true, "symbol":"OANDA:XAUUSD", "interval":"D", "theme":"dark", "style":"1", "container_id":"tradingview_chart"});
 
     function showInfo(title, text) {
