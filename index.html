@@ -15,11 +15,13 @@
                         url('everest.jpeg');
             background-size: cover; background-position: center;
             background-attachment: fixed; color: #ffffff;
-            /* Added background animation */
             animation: slowZoom 30s ease-in-out infinite alternate;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
         }
 
-        /* Animation for the background */
+        body.fade-out { opacity: 0; }
+
         @keyframes slowZoom {
             0% { background-size: 100% 100%; }
             100% { background-size: 110% 110%; }
@@ -30,13 +32,11 @@
             padding: 25px 5%; gap: 20px; box-sizing: border-box; 
         }
 
-        /* Header Layout */
         header { display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
         .brand-group { display: flex; flex-direction: column; }
         .brand-main { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px; }
         .brand-sub { font-family: 'Montserrat', sans-serif; font-size: 0.6rem; color: #FFD700; letter-spacing: 3px; text-transform: uppercase; margin-top: 4px; }
         
-        /* Ticker */
         .ticker-container { 
             flex: 1; margin: 0 40px; overflow: hidden; background: rgba(0,0,0,0.4); 
             padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(255,215,0,0.2);
@@ -49,9 +49,8 @@
         .price-up { color: #FFD700; font-weight: 700; }
         .price-down { color: #ff4500; }
 
-        /* Nav & CTA */
         .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { text-decoration: none; color: #aaa; font-size: 0.8rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: #aaa; font-size: 0.8rem; font-weight: 500; transition: 0.3s; cursor: pointer; }
         .nav-links a:hover { color: #FFD700; }
         .login-btn {
             padding: 8px 20px; border: 1px solid #333; border-radius: 50px;
@@ -59,7 +58,6 @@
         }
         .login-btn:hover { border-color: #FFD700; background: #FFD700; color: #000; }
 
-        /* Main Content */
         main { display: flex; gap: 40px; flex-grow: 1; align-items: center; min-height: 0; }
         .text-side { flex: 1; display: flex; flex-direction: column; gap: 15px; }
         .logo { font-size: 4.5rem; font-weight: 900; letter-spacing: -4px; line-height: 0.8; color: #fff; text-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
@@ -74,14 +72,12 @@
 
         .image-side { flex: 1.2; height: 100%; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); }
 
-        /* Footer Features */
         .feature-row { display: flex; gap: 15px; height: 100px; flex-shrink: 0; }
         .feature-box { flex: 1; padding: 20px; border-radius: 15px; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); transition: 0.3s; cursor: pointer; }
         .feature-box:hover { background: rgba(255, 215, 0, 0.1); border-color: #FFD700; }
         .feature-box h4 { margin: 0 0 4px 0; color: #FFD700; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; }
         .feature-box p { margin: 0; font-size: 0.8rem; color: #ccc; }
 
-        /* Modal UI */
         #overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 999; opacity: 0; transition: opacity 0.4s ease;
@@ -98,7 +94,6 @@
         .pair-list { list-style: none; padding: 0; }
         .pair-list li { border-bottom: 1px solid #333; padding: 10px 0; font-size: 0.85rem; display: flex; justify-content: space-between; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             body { overflow-y: auto; height: auto; }
             .main-wrapper { height: auto; padding: 20px; }
@@ -107,7 +102,7 @@
             main { flex-direction: column; height: auto; gap: 25px; }
             .logo { font-size: 2.8rem; letter-spacing: -2px; }
             .title { font-size: 1.8rem; }
-            .image-side { height: 250px; width: 100%; order: -1; }
+            .image-side { display: none; }
             .feature-row { flex-direction: column; height: auto; gap: 10px; }
             #info-modal { width: 85%; padding: 20px; }
         }
@@ -126,8 +121,8 @@
                 </div>
         </div>
         <div class="nav-links">
-            <a href="algorithms.html">Algorithms</a>
-            <a href="login.html" class="login-btn">Member Login</a>
+            <a onclick="startTransition('algorithms.html')">Algorithms</a>
+            <a onclick="startTransition('login.html')" class="login-btn">Member Login</a>
         </div>
     </header>
 
@@ -136,7 +131,7 @@
             <div class="logo">ApexTC</div>
             <h1 class="title">Scale your<br>trading potential.</h1>
             <p>Advanced institutional-grade education for the modern retail trader.</p>
-            <button class="cta-button" onclick="window.location.href='signup.html'">START YOUR JOURNEY</button>
+            <button class="cta-button" onclick="startTransition('signup.html')">START YOUR JOURNEY</button>
         </section>
         <div class="image-side">
             <div id="tradingview_chart" style="height:100%; width:100%;"></div>
@@ -183,6 +178,13 @@
     });
 
     new TradingView.widget({"autosize":true, "symbol":"OANDA:XAUUSD", "interval":"D", "theme":"dark", "style":"1", "container_id":"tradingview_chart"});
+
+    function startTransition(url) {
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);
+    }
 
     function showInfo(title, text) {
         document.getElementById('modal-title').innerText = title;
