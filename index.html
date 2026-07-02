@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexTC | Peak Performance Trading</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -195,7 +196,15 @@
     function showAll() {
         document.getElementById('modal-title').innerText = "Market Overview";
         const list = document.getElementById('modal-list');
-        list.innerHTML = pairs.map(item => `<li><strong>${item.n}</strong> ${item.p} <span style="color:#aaa">${item.d}</span></li>`).join('');
+        list.innerHTML = pairs.map(item => `
+            <li>
+                <strong>${item.n}</strong> 
+                <span>${item.p}</span> 
+                <span style="color: ${item.d.includes('Bullish') ? '#2ecc71' : (item.d.includes('Bearish') ? '#ff4500' : '#aaa')}">
+                    ${item.d}
+                </span>
+            </li>
+        `).join('');
         openModal();
     }
 
