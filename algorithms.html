@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
     <title>Algorithms | ApexTC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         body { 
             margin: 0; padding: 50px 10%; min-height: 100vh;
-            /* Added background image styles */
             background-image: linear-gradient(rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.85)), url('everest.jpeg');
             background-size: cover;
             background-position: center center;
@@ -35,6 +35,8 @@
         .algo-card h3 { color: #fff; margin-top: 0; font-size: 1.4rem; }
         .algo-card p { color: #aaa; font-size: 0.9rem; line-height: 1.6; }
         .tag { display: inline-block; background: #0f1115; color: #FFD700; padding: 5px 12px; border-radius: 5px; font-size: 0.7rem; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
+        
+        .algo-card img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -48,16 +50,19 @@
 
     <div class="algo-grid">
         <div class="algo-card">
+            <img src="trend-chart.png" alt="Trend Following">
             <span class="tag">STRATEGY</span>
             <h3>Trend Following</h3>
             <p>Automated systems that identify and capitalize on sustained market momentum using moving average convergence and volatility-adjusted entry signals.</p>
         </div>
         <div class="algo-card">
+            <img src="mean-reversion.png" alt="Mean Reversion">
             <span class="tag">MODEL</span>
             <h3>Mean Reversion</h3>
             <p>Utilizes statistical analysis to identify overextended price moves, predicting a return to the mean with high-probability exhaustion points.</p>
         </div>
         <div class="algo-card">
+            <img src="liquidity-sweep.png" alt="Liquidity Sweeps">
             <span class="tag">EXECUTION</span>
             <h3>Liquidity Sweeps</h3>
             <p>A sophisticated model designed to detect institutional "smart money" traps and liquidity grabs, allowing you to enter at optimal reversal points.</p>
