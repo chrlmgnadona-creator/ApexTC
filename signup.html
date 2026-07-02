@@ -94,15 +94,22 @@
 
         .divider { margin: 20px 0; color: #666; font-size: 0.75rem; text-transform: uppercase; }
         .social-login { display: flex; justify-content: center; gap: 20px; }
+        
         .btn-social {
             width: 50px; height: 50px; border-radius: 50%; border: 1px solid #334155;
             background: #1a1d23; color: #fff; cursor: pointer; display: flex;
             justify-content: center; align-items: center; 
-            /* Transition duration set to 1s */
+            /* Added opacity and 1s transition */
             transition: all 1s ease;
             text-decoration: none;
+            opacity: 0.8;
         }
-        .btn-social:hover { background: #252830; border-color: #f59e0b; color: #f59e0b; }
+        .btn-social:hover { 
+            background: #252830; 
+            border-color: #f59e0b; 
+            color: #f59e0b; 
+            opacity: 1; 
+        }
         .btn-social:active { transform: scale(0.95); }
     </style>
 </head>
@@ -135,8 +142,8 @@
         <div class="divider">Or continue with</div>
 
         <div class="social-login">
-            <a href="/auth/google" class="btn-social" title="Sign in with Google"><i class="fab fa-google"></i></a>
-            <a href="/auth/apple" class="btn-social" title="Sign in with Apple"><i class="fab fa-apple"></i></a>
+            <a href="google-auth.html" class="btn-social" title="Sign in with Google"><i class="fab fa-google"></i></a>
+            <a href="apple-auth.html" class="btn-social" title="Sign in with Apple"><i class="fab fa-apple"></i></a>
         </div>
     </div>
 
