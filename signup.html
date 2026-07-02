@@ -21,133 +21,51 @@
             font-family: 'Inter', sans-serif;
             animation: slowZoom 30s ease-in-out infinite alternate;
         }
-
-        .back-arrow {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #f59e0b;
-            font-size: 1.5rem;
-            text-decoration: none;
-            z-index: 100;
-            transition: 0.3s;
-        }
+        .back-arrow { position: absolute; top: 20px; left: 20px; color: #f59e0b; font-size: 1.5rem; text-decoration: none; z-index: 100; transition: 0.3s; }
         .back-arrow:hover { color: #fff; transform: translateX(-5px); }
-
-        @keyframes slowZoom {
-            0% { background-size: 100% 100%; }
-            100% { background-size: 110% 110%; }
-        }
-        
-        .form-container {
-            background: rgba(26, 29, 35, 0.85);
-            padding: 50px;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-        }
-
+        @keyframes slowZoom { 0% { background-size: 100% 100%; } 100% { background-size: 110% 110%; } }
+        .form-container { background: rgba(26, 29, 35, 0.85); padding: 50px; border-radius: 16px; width: 100%; max-width: 400px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); }
         h2 { margin-top: 0; color: #f59e0b; font-weight: 600; }
         p { color: #94a3b8; margin-bottom: 30px; font-size: 1rem; font-weight: 400; }
-        
         .input-group { position: relative; width: 100%; }
-        input {
-            width: 100%;
-            padding: 14px;
-            margin: 10px 0;
-            background: #0f1115;
-            border: 1px solid #334155;
-            color: white;
-            border-radius: 8px;
-            box-sizing: border-box;
-            padding-right: 40px;
-        }
-
-        .toggle-password {
-            position: absolute;
-            right: 15px;
-            top: 25px;
-            cursor: pointer;
-            color: #666;
-        }
+        input { width: 100%; padding: 14px; margin: 10px 0; background: #0f1115; border: 1px solid #334155; color: white; border-radius: 8px; box-sizing: border-box; padding-right: 40px; }
+        .toggle-password { position: absolute; right: 15px; top: 25px; cursor: pointer; color: #666; }
         .toggle-password:hover { color: #f59e0b; }
-
         #passwordError { color: #f87171; font-size: 0.85rem; margin-bottom: 10px; display: none; }
-
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #000;
-            background: linear-gradient(90deg, #f59e0b, #fbbf24);
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
-            transition: all 0.3s ease;
-            margin: 20px 0;
-        }
+        .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; color: #000; background: linear-gradient(90deg, #f59e0b, #fbbf24); box-shadow: 0 0 20px rgba(245, 158, 11, 0.6); transition: all 0.3s ease; margin: 20px 0; }
         .submit-btn:hover { box-shadow: 0 0 30px rgba(245, 158, 11, 0.9); }
-
         .divider { margin: 20px 0; color: #666; font-size: 0.75rem; text-transform: uppercase; }
         .social-login { display: flex; justify-content: center; gap: 20px; }
-        
-        .btn-social {
-            width: 50px; height: 50px; border-radius: 50%; border: 1px solid #334155;
-            background: #1a1d23; color: #fff; cursor: pointer; display: flex;
-            justify-content: center; align-items: center; 
-            transition: all 1s ease;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-        .btn-social:hover { 
-            background: #252830; 
-            border-color: #f59e0b; 
-            color: #f59e0b; 
-            opacity: 1; 
-        }
-        .btn-social:active { transform: scale(0.95); }
+        .btn-social { width: 50px; height: 50px; border-radius: 50%; border: 1px solid #334155; background: #1a1d23; color: #fff; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 1s ease; text-decoration: none; opacity: 0.8; }
+        .btn-social:hover { background: #252830; border-color: #f59e0b; color: #f59e0b; opacity: 1; }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
-
     <div class="form-container">
         <h2>Sign Up</h2>
         <p>Start your journey with ApexTC.</p>
-
         <form id="signupForm" action="dashboard.html" method="POST">
             <input type="text" name="full_name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email Address" required>
-            
             <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Create Password" required>
                 <i class="fas fa-eye toggle-password" onclick="toggleVisibility('password', event)"></i>
             </div>
-            
             <div class="input-group">
                 <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
                 <i class="fas fa-eye toggle-password" onclick="toggleVisibility('confirm_password', event)"></i>
             </div>
-            
             <div id="passwordError">Passwords do not match!</div>
-            
             <button type="submit" class="submit-btn">REGISTER NOW</button>
         </form>
-
         <div class="divider">Or continue with</div>
-
         <div class="social-login">
             <a href="google-auth.html" class="btn-social" title="Sign in with Google"><i class="fab fa-google"></i></a>
             <a href="apple-auth.html" class="btn-social" title="Sign in with Apple"><i class="fab fa-apple"></i></a>
         </div>
     </div>
-
     <script>
-        // Inject loading overlay
         const loader = document.createElement('div');
         loader.id = 'loadingOverlay';
         loader.style.cssText = 'display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 17, 21, 0.95); z-index: 1000; justify-content: center; align-items: center; color: #f59e0b; flex-direction: column; font-family: "Inter", sans-serif;';
@@ -157,37 +75,17 @@
         function toggleVisibility(id, event) {
             const input = document.getElementById(id);
             const icon = event.target;
-            if (input.type === "password") {
-                input.type = "text";
-                icon.classList.remove("fa-eye");
-                icon.classList.add("fa-eye-slash");
-            } else {
-                input.type = "password";
-                icon.classList.remove("fa-eye-slash");
-                icon.classList.add("fa-eye");
-            }
+            if (input.type === "password") { input.type = "text"; icon.classList.remove("fa-eye"); icon.classList.add("fa-eye-slash"); } 
+            else { input.type = "password"; icon.classList.remove("fa-eye-slash"); icon.classList.add("fa-eye"); }
         }
 
         const signupForm = document.getElementById('signupForm');
-        const password = document.getElementById('password');
-        const confirmPassword = document.getElementById('confirm_password');
-        const errorMsg = document.getElementById('passwordError');
-
         signupForm.addEventListener('submit', function(e) {
-            if (password.value !== confirmPassword.value) {
-                e.preventDefault(); 
-                errorMsg.style.display = 'block';
-            } else {
-                e.preventDefault(); // Stop immediate submission
-                errorMsg.style.display = 'none';
-                
-                // Show the loader
+            if (document.getElementById('password').value !== document.getElementById('confirm_password').value) { e.preventDefault(); document.getElementById('passwordError').style.display = 'block'; } 
+            else {
+                e.preventDefault();
                 document.getElementById('loadingOverlay').style.display = 'flex';
-                
-                // Wait 3 seconds then submit
-                setTimeout(() => {
-                    signupForm.submit();
-                }, 3000);
+                setTimeout(() => { localStorage.setItem('isLoggedIn', 'true'); signupForm.submit(); }, 3000);
             }
         });
     </script>
