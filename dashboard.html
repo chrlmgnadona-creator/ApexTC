@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexTC | Trading Mastery Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #FFFFFF; 
+        }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .concept-card { transition: all 0.3s ease; }
+        .concept-card:hover { border-color: #F5B301; background: rgba(245, 179, 1, 0.05); }
+    </style>
+</head>
+<body class="w-screen h-screen m-0 p-6 overflow-x-hidden">
+
+    <header class="max-w-[95%] mx-auto mb-10">
+        <h1 class="text-5xl font-bold italic">Apex<span class="text-amber-500">TC</span> <span class="font-light text-2xl text-gray-500 not-italic">| Trading Mastery Modules</span></h1>
+    </header>
+
+    <main class="max-w-[95%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="lg:col-span-3 flex flex-wrap gap-4 items-center mb-4">
+            <div class="glass px-4 py-2 rounded-lg text-xs flex items-center gap-2">
+                <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
+                <input type="text" placeholder="Search Concepts..." class="bg-transparent outline-none text-white placeholder-gray-500">
+            </div>
+            <button onclick="alert('Launching Trading Simulator...')" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95">
+                <i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator
+            </button>
+            <div class="glass px-4 py-2 rounded-lg text-xs">Streak: 🔥 5 Days</div>
+        </div>
+
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass p-6 rounded-2xl flex items-center gap-4">
+                <i data-lucide="bar-chart-3" class="text-emerald-500 w-8 h-8"></i>
+                <div>
+                    <h3 class="font-bold text-sm">Market Sentiment</h3>
+                    <p class="text-[10px] text-gray-400">Bullish bias based on historical volume patterns.</p>
+                </div>
+            </div>
+            <div class="glass p-6 rounded-2xl flex items-center gap-4">
+                <i data-lucide="quote" class="text-amber-500 w-8 h-8"></i>
+                <div>
+                    <h3 class="font-bold text-sm">Quote of the Day</h3>
+                    <p id="quote-text" class="text-[10px] text-gray-400 italic">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="concept-grid" class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <script>
+                const concepts = [
+                    { title: "The Wait Philosophy", icon: "clock", desc: "90% waiting, 10% executing." },
+                    { title: "Timeframe Correlation", icon: "layers", desc: "Top-down analysis logic." },
+                    { title: "Cost of Business", icon: "receipt", desc: "Calculating fees & slippage." },
+                    { title: "Correlation vs Causation", icon: "git-merge", desc: "Avoid curve-fitting traps." },
+                    { title: "Anatomy of a Loss", icon: "shield-alert", desc: "Losses are data, not failure." },
+                    { title: "Volatility Awareness", icon: "activity", desc: "Adjusting for market 'mood'." },
+                    { title: "Session Logic", icon: "globe", desc: "Liquidity profiles by time." },
+                    { title: "Psychological Bias", icon: "brain", desc: "Identifying hardwired errors." },
+                    { title: "Position Sizing", icon: "scale", desc: "Survival and account core." },
+                    { title: "News Filtering", icon: "newspaper", desc: "Technical vs. Event risk." }
+                ];
+
+                concepts.forEach(c => {
+                    document.write(`
+                        <div class="glass p-4 rounded-xl concept-card cursor-pointer flex flex-col justify-between transition-transform active:scale-95">
+                            <div>
+                                <i data-lucide="${c.icon}" class="text-amber-500 mb-2"></i>
+                                <h3 class="text-sm font-bold">${c.title}</h3>
+                                <p class="text-[10px] text-gray-400 mt-1">${c.desc}</p>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </main>
+
+    <footer class="text-center mt-12 pb-6 text-[10px] text-gray-600 uppercase tracking-widest">
+        Educational Disclaimer: ApexTC provides educational content only. No financial advice. 
+        <br>
+        <button onclick="document.getElementById('policyModal').classList.remove('hidden')" class="underline hover:text-amber-500 mt-1">Terms & Cookies Policy</button>
+    </footer>
+
+    <div id="policyModal" class="hidden fixed inset-0 flex items-center justify-center p-4 z-50 bg-black/50 backdrop-blur-sm">
+        <div class="glass p-8 rounded-2xl max-w-lg w-full shadow-2xl border border-white/10">
+            <h2 class="text-xl font-bold mb-4 text-amber-500">Legal & Privacy</h2>
+            <div class="space-y-4 text-xs text-gray-300">
+                <p><strong>Terms of Service:</strong> By using this dashboard, you acknowledge that trading involves significant risk.</p>
+                <p><strong>Cookie Policy:</strong> We use cookies to enhance your experience, save your preferences, and maintain your session streak.</p>
+                <p><strong>Privacy Policy:</strong> Your data is stored locally and encrypted. We do not sell your personal trading information.</p>
+            </div>
+            <button onclick="document.getElementById('policyModal').classList.add('hidden')" class="mt-6 w-full py-2 bg-amber-500 text-black font-bold rounded-lg text-xs hover:bg-amber-400 transition">Close</button>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const quotes = [
+            "The market is a device for transferring money from the impatient to the patient.",
+            "Trading is not about being right, it's about being profitable.",
+            "Discipline is the bridge between goals and accomplishment.",
+            "The goal is not to trade well, but to trade consistently.",
+            "Risk management is the heart of trading."
+        ];
+        function updateQuote() {
+            const now = new Date().getTime();
+            const lastUpdate = localStorage.getItem('lastQuoteUpdate');
+            let index = localStorage.getItem('currentQuoteIndex') || 0;
+            if (!lastUpdate || now - lastUpdate > 86400000) {
+                index = (parseInt(index) + 1) % quotes.length;
+                localStorage.setItem('currentQuoteIndex', index);
+                localStorage.setItem('lastQuoteUpdate', now);
+            }
+            document.getElementById('quote-text').innerText = `"${quotes[index]}"`;
+        }
+        updateQuote();
+    </script>
+</body>
+</html>
