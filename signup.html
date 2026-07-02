@@ -81,11 +81,17 @@
 
         const signupForm = document.getElementById('signupForm');
         signupForm.addEventListener('submit', function(e) {
-            if (document.getElementById('password').value !== document.getElementById('confirm_password').value) { e.preventDefault(); document.getElementById('passwordError').style.display = 'block'; } 
-            else {
+            if (document.getElementById('password').value !== document.getElementById('confirm_password').value) { 
+                e.preventDefault(); 
+                document.getElementById('passwordError').style.display = 'block'; 
+            } else {
                 e.preventDefault();
                 document.getElementById('loadingOverlay').style.display = 'flex';
-                setTimeout(() => { localStorage.setItem('isLoggedIn', 'true'); signupForm.submit(); }, 3000);
+                // Success logic: save the login flag and redirect manually
+                setTimeout(() => { 
+                    localStorage.setItem('isLoggedIn', 'true'); 
+                    window.location.href = 'dashboard.html'; 
+                }, 3000);
             }
         });
     </script>
