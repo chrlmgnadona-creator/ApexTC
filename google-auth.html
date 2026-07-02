@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Authentication | ApexTC</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-image: linear-gradient(rgba(15, 17, 21, 0.7), rgba(15, 17, 21, 0.7)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: #fff; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0;
+            font-family: 'Inter', sans-serif; 
+        }
+        .box { text-align: center; background: rgba(26, 29, 35, 0.85); padding: 50px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); }
+        .spinner { width: 50px; height: 50px; border: 5px solid rgba(245, 158, 11, 0.2); border-top: 5px solid #f59e0b; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        h2 { color: #f59e0b; }
+        p { color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2 id="status">Connecting to Google...</h2>
+        <div class="spinner"></div>
+        <p id="sub-status">Handshaking with authentication server</p>
+    </div>
+    <script>
+        const status = document.getElementById('status');
+        const subStatus = document.getElementById('sub-status');
+        setTimeout(() => {
+            status.innerText = "Redirecting securely...";
+            subStatus.innerText = "Please complete the login in the pop-up window";
+        }, 1000);
+        setTimeout(() => { window.location.href = "https://accounts.google.com"; }, 2500);
+    </script>
+</body>
+</html>
