@@ -19,7 +19,7 @@
 </head>
 <body class="w-screen h-screen m-0 p-6 overflow-x-hidden">
     <header class="max-w-[95%] mx-auto mb-10"><h1 class="text-5xl font-bold italic">Apex<span class="text-amber-500">TC</span> <span class="font-light text-2xl text-gray-500 not-italic">| Trading Mastery Modules</span></h1></header>
-    <main class="max-w-[95%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <main class="max-w-[95%] mx-auto grid grid-cols-1 md:grid-grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="lg:col-span-3 flex flex-wrap gap-4 items-center mb-4">
             <div class="glass px-4 py-2 rounded-lg text-xs flex items-center gap-2">
                 <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
@@ -35,16 +35,56 @@
         <div id="concept-grid" class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <script>
                 const concepts = [
-                    { title: "The Wait Philosophy", icon: "clock", desc: "90% waiting, 10% executing." },
-                    { title: "Timeframe Correlation", icon: "layers", desc: "Top-down analysis logic." },
-                    { title: "Cost of Business", icon: "receipt", desc: "Calculating fees & slippage." },
-                    { title: "Correlation vs Causation", icon: "git-merge", desc: "Avoid curve-fitting traps." },
-                    { title: "Anatomy of a Loss", icon: "shield-alert", desc: "Losses are data, not failure." },
-                    { title: "Volatility Awareness", icon: "activity", desc: "Adjusting for market 'mood'." },
-                    { title: "Session Logic", icon: "globe", desc: "Liquidity profiles by time." },
-                    { title: "Psychological Bias", icon: "brain", desc: "Identifying hardwired errors." },
-                    { title: "Position Sizing", icon: "scale", desc: "Survival and account core." },
-                    { title: "News Filtering", icon: "newspaper", desc: "Technical vs. Event risk." }
+                    { title: "Price Action", icon: "pencil", desc: "The study of pure price movement." },
+                    { title: "Smart Money", icon: "landmark", desc: "Tracking institutional order flow." },
+                    { title: "Order Blocks", icon: "box", desc: "Zones of supply and demand." },
+                    { title: "Fair Value Gaps", icon: "arrow-up-right", desc: "Market inefficiencies." },
+                    { title: "Liquidity Sweeps", icon: "droplets", desc: "Stop-loss hunting mechanics." },
+                    { title: "Market Structure", icon: "trending-up", desc: "Defining HTF and LTF bias." },
+                    { title: "Risk Management", icon: "shield-alert", desc: "Preserving capital core." },
+                    { title: "Position Sizing", icon: "scale", desc: "Math of survivability." },
+                    { title: "Psychology", icon: "brain", desc: "Mastering fear and greed." },
+                    { title: "Volume Profile", icon: "bar-chart-2", desc: "Trading where volume lives." },
+                    { title: "Fibonacci", icon: "percent", desc: "Harmonic retracement levels." },
+                    { title: "Wyckoff Theory", icon: "git-merge", desc: "Accumulation and distribution." },
+                    { title: "Elliott Waves", icon: "waves", desc: "Market wave cycles." },
+                    { title: "Support/Resistance", icon: "divide", desc: "Key reaction levels." },
+                    { title: "Trend Trading", icon: "arrow-right", desc: "Following the path of least resistance." },
+                    { title: "Mean Reversion", icon: "refresh-cw", desc: "Returning to the average." },
+                    { title: "Scalping", icon: "zap", desc: "Small time-frame execution." },
+                    { title: "Day Trading", icon: "sun", desc: "No overnight exposure." },
+                    { title: "Swing Trading", icon: "moon", desc: "Capturing medium-term trends." },
+                    { title: "Macroeconomics", icon: "globe", desc: "Central banks and interest rates." },
+                    { title: "News Filtering", icon: "newspaper", desc: "Avoiding event volatility." },
+                    { title: "Candlestick Logic", icon: "candle", desc: "Decoding bar sentiment." },
+                    { title: "Tape Reading", icon: "file-text", desc: "Reading order book flow." },
+                    { title: "Algorithmic Models", icon: "cpu", desc: "Systematic rule-based logic." },
+                    { title: "Funding Rates", icon: "coins", desc: "Cost of holding leverage." },
+                    { title: "Backtesting", icon: "history", desc: "Validation through data." },
+                    { title: "Forward Testing", icon: "play", desc: "Simulated market practice." },
+                    { title: "Journaling", icon: "book-open", desc: "Reviewing execution errors." },
+                    { title: "Correlations", icon: "link", desc: "Asset-pair relationships." },
+                    { title: "Volatility", icon: "activity", desc: "Measuring market energy." },
+                    { title: "Breakouts", icon: "unlock", desc: "Trading momentum shifts." },
+                    { title: "Gap Trading", icon: "skip-forward", desc: "Opening price imbalances." },
+                    { title: "Hedging", icon: "shield-check", desc: "Risk neutral strategies." },
+                    { title: "Dark Pools", icon: "eye-off", desc: "Invisible volume monitoring." },
+                    { title: "Arbitrage", icon: "repeat", desc: "Price difference capture." },
+                    { title: "Leverage Math", icon: "battery-charging", desc: "Margin and liquidation risk." },
+                    { title: "Drawdown Control", icon: "pause-circle", desc: "Recovery after series loss." },
+                    { title: "Capital Allocation", icon: "credit-card", desc: "Scaling into winners." },
+                    { title: "Session Logic", icon: "clock", desc: "Asian vs London vs NY." },
+                    { title: "Supply/Demand", icon: "layers", desc: "Institutional imbalance." },
+                    { title: "Moving Averages", icon: "line-chart", desc: "Momentum smoothing." },
+                    { title: "RSI / Oscillators", icon: "chevrons-up", desc: "Overbought/Oversold states." },
+                    { title: "Swing Failures", icon: "trending-down", desc: "Failed liquidity raids." },
+                    { title: "Breaker Blocks", icon: "hammer", desc: "Broken S/D zones." },
+                    { title: "Confluence", icon: "map", desc: "Stacking multiple edges." },
+                    { title: "Execution Speed", icon: "fast-forward", desc: "Latency and slippage." },
+                    { title: "Broker Selection", icon: "building", desc: "Spread and execution quality." },
+                    { title: "Portfolio Theory", icon: "briefcase", desc: "Reducing asset dependency." },
+                    { title: "Time-Based Cycles", icon: "calendar", desc: "Seasonality and time-of-day." },
+                    { title: "Stop-Loss Logic", icon: "stop-circle", desc: "Defining invalidation points." }
                 ];
                 concepts.forEach(c => { document.write(`<div class="glass p-4 rounded-xl concept-card cursor-pointer flex flex-col justify-between transition-transform active:scale-95"><div><i data-lucide="${c.icon}" class="text-amber-500 mb-2"></i><h3 class="text-sm font-bold">${c.title}</h3><p class="text-[10px] text-gray-400 mt-1">${c.desc}</p></div></div>`); });
             </script>
@@ -53,7 +93,7 @@
     <footer class="text-center mt-12 pb-6 text-[10px] text-gray-600 uppercase tracking-widest">
         Educational Disclaimer: ApexTC provides educational content only. No financial advice. <br>
         <button onclick="document.getElementById('policyModal').classList.remove('hidden')" class="underline hover:text-amber-500 mt-1">Terms & Cookies Policy</button><br>
-        <button onclick="localStorage.removeItem('isLoggedIn'); window.location.href='signup.html';" class="text-gray-500 hover:text-red-500 mt-2 italic">Logout</button>
+        <button onclick="localStorage.removeItem('isLoggedIn'); window.location.href='index.html';" class="text-gray-500 hover:text-red-500 mt-2 italic">Logout</button>
     </footer>
     <div id="policyModal" class="hidden fixed inset-0 flex items-center justify-center p-4 z-50 bg-black/50 backdrop-blur-sm">
         <div class="glass p-8 rounded-2xl max-w-lg w-full shadow-2xl border border-white/10">
