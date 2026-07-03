@@ -26,7 +26,9 @@
                 <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
                 <input type="text" placeholder="Search Concepts..." class="bg-transparent outline-none text-white placeholder-gray-500">
             </div>
-            <a href="simulator.html" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95 no-underline"><i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator</a>
+            <a href="simulator.html" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95 no-underline">
+                <i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator
+            </a>
             <div class="glass px-4 py-2 rounded-lg text-xs">Streak: 🔥 5 Days</div>
         </div>
         <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -112,6 +114,14 @@
     </div>
     <script>
         lucide.createIcons();
+        document.querySelector('input[type="text"]').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('#concept-grid > a');
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = title.includes(searchTerm) ? 'flex' : 'none';
+            });
+        });
         const quotes = ["The market is a device for transferring money from the impatient to the patient.", "Trading is not about being right, it's about being profitable.", "Discipline is the bridge between goals and accomplishment.", "The goal is not to trade well, but to trade consistently.", "Risk management is the heart of trading."];
         function updateQuote() {
             const now = new Date().getTime();
