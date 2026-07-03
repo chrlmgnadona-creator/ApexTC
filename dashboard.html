@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexTC | Trading Mastery Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -25,7 +26,7 @@
                 <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
                 <input type="text" placeholder="Search Concepts..." class="bg-transparent outline-none text-white placeholder-gray-500">
             </div>
-            <button onclick="alert('Launching Trading Simulator...')" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95"><i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator</button>
+            <a href="simulator.html" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95 no-underline"><i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator</a>
             <div class="glass px-4 py-2 rounded-lg text-xs">Streak: 🔥 5 Days</div>
         </div>
         <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -86,7 +87,10 @@
                     { title: "Time-Based Cycles", icon: "calendar", desc: "Seasonality and time-of-day." },
                     { title: "Stop-Loss Logic", icon: "stop-circle", desc: "Defining invalidation points." }
                 ];
-                concepts.forEach(c => { document.write(`<div class="glass p-4 rounded-xl concept-card cursor-pointer flex flex-col justify-between transition-transform active:scale-95"><div><i data-lucide="${c.icon}" class="text-amber-500 mb-2"></i><h3 class="text-sm font-bold">${c.title}</h3><p class="text-[10px] text-gray-400 mt-1">${c.desc}</p></div></div>`); });
+                concepts.forEach(c => { 
+                    const id = c.title.toLowerCase().replace(/\s+/g, '-');
+                    document.write(`<a href="module.html?id=${id}" class="glass p-4 rounded-xl concept-card cursor-pointer flex flex-col justify-between transition-transform active:scale-95"><div><i data-lucide="${c.icon}" class="text-amber-500 mb-2"></i><h3 class="text-sm font-bold">${c.title}</h3><p class="text-[10px] text-gray-400 mt-1">${c.desc}</p></div></a>`); 
+                });
             </script>
         </div>
     </main>
