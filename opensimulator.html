@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexTC | Pro Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+            color: #FFFFFF; 
+            min-height: 100vh;
+        }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .log-entry { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-7xl mx-auto">
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-4">
+                <a href="dashboard.html" class="text-white hover:text-amber-500 transition">
+                    <i data-lucide="arrow-left" class="w-6 h-6"></i>
+                </a>
+                <h1 class="text-3xl font-bold italic">Apex<span class="text-amber-500">TC</span></h1>
+            </div>
+            <div class="flex gap-4 items-center">
+                <button onclick="toggleFullscreen()" class="text-white hover:text-amber-500 transition"><i data-lucide="maximize" class="w-5 h-5"></i></button>
+                <select id="pairSelect" class="glass px-4 py-2 rounded-lg text-sm outline-none cursor-pointer bg-[#0b1220] border border-white/10">
+                    <option value="BITSTAMP:BTCUSD">BTC / USD</option>
+                    <option value="COINBASE:ETHUSD">ETH / USD</option>
+                    <option value="FX:EURUSD">EUR / USD</option>
+                    <option value="OANDA:XAUUSD">GOLD / USD</option>
+                </select>
+                <button onclick="resetData()" class="text-xs text-gray-500 hover:text-red-400 underline">Reset</button>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div class="lg:col-span-3 h-[600px] glass rounded-2xl overflow-hidden border border-white/10">
+                <div id="tradingview_widget" class="h-full w-full"></div>
+            </div>
+            
+            <aside class="glass p-6 rounded-2xl flex flex-col gap-6">
+                <!-- Balance & Trades -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div><p class="text-[10px] text-gray-500 uppercase">Balance</p><p id="bal" class="font-mono text-lg">$10,000.00</p></div>
+                    <div><p class="text-[10px] text-gray-500 uppercase">Trades</p><p id="trade-count" class="font-mono text-lg">0</p></div>
+                </div>
+
+                <input id="vol" type="number" value="1" class="w-full bg-[#0b1220] border border-white/10 rounded-lg p-2 text-white outline-none">
+                <div class="grid grid-cols-2 gap-2">
+                    <button id="buy-btn" class="py-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-bold rounded-lg hover:bg-emerald-500/20">Buy</button>
+                    <button id="sell-btn" class="py-2 bg-red-500/10 border border-red-500/30 text-red-500 font-bold rounded-lg hover:bg-red-500/20">Sell</button>
+                </div>
+
+                <!-- Analysis Tools -->
+                <div class="pt-4 border-t border-white/10">
+                    <h3 class="text-[10px] uppercase font-bold text-gray-500 mb-3">Analysis Tools</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="tool-trend" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="trending-up" class="w-4 h-4"></i></button>
+                        <button id="tool-fib" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="percent" class="w-4 h-4"></i></button>
+                        <button id="tool-support" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                        <button id="tool-resist" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="equal" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+
+                <!-- Pro Tools -->
+                <div class="pt-4 border-t border-white/10">
+                    <h3 class="text-[10px] uppercase font-bold text-gray-500 mb-3">Pro Tools</h3>
+                    <div class="grid grid-cols-4 gap-2 mb-2">
+                        <button onclick="setTF('60')" class="p-1 glass rounded text-[9px] hover:bg-white/10">1H</button>
+                        <button onclick="setTF('240')" class="p-1 glass rounded text-[9px] hover:bg-white/10">4H</button>
+                        <button onclick="setTF('D')" class="p-1 glass rounded text-[9px] hover:bg-white/10">1D</button>
+                        <button onclick="setTF('W')" class="p-1 glass rounded text-[9px] hover:bg-white/10">1W</button>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setChart('1')" class="p-2 glass rounded flex justify-center hover:bg-white/10"><i data-lucide="bar-chart-2" class="w-3 h-3"></i></button>
+                        <button onclick="setChart('3')" class="p-2 glass rounded flex justify-center hover:bg-white/10"><i data-lucide="line-chart" class="w-3 h-3"></i></button>
+                        <button onclick="document.getElementById('trade-log').innerHTML=''" class="p-2 glass rounded flex justify-center hover:bg-red-900/20 text-red-400"><i data-lucide="trash-2" class="w-3 h-3"></i></button>
+                    </div>
+                </div>
+
+                <div id="trade-log" class="flex-grow h-24 overflow-y-auto space-y-1 text-xs pt-4 border-t border-white/10"></div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        lucide.createIcons();
+        let tvWidget;
+        // Functions remain as defined
+        function toggleFullscreen() { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+        function setTF(tf) { tvWidget.chart().setChartType(1); tvWidget.chart().setSymbol('BITSTAMP:BTCUSD', tf); }
+        function setChart(type) { tvWidget.chart().setChartType(parseInt(type)); }
+        function loadChart(symbol) { tvWidget = new TradingView.widget({ "container_id": "tradingview_widget", "autosize": true, "symbol": symbol, "theme": "dark" }); }
+        // Remaining UI/Trade logic
+        loadChart("BITSTAMP:BTCUSD");
+    </script>
+</body>
+</html>
