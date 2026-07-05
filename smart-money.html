@@ -20,18 +20,19 @@
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
+            min-height: 100vh;
         }
 
         .glass { 
             background: rgba(255, 255, 255, 0.03); 
             backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08); 
             padding: 25px; 
             margin-bottom: 20px; 
             border-radius: 12px; 
         }
 
-        /* Specific animation for "What is Smart Money?" */
         .animate-glow {
             animation: glowPulse 4s infinite ease-in-out;
         }
@@ -55,7 +56,6 @@
         th, td { border: 1px solid #4a5568; padding: 12px; text-align: left; width: 50%; }
         th { background-color: rgba(26, 32, 44, 0.9); color: #f6ad55; }
 
-        /* Mobile Responsive Adjustments */
         @media (max-width: 600px) {
             .title-main { font-size: 1.5em; }
             .header-container { gap: 10px; }
@@ -71,7 +71,6 @@
         <h1 class="title-main" style="color: #fff;">Apex<span style="color: #f6ad55;">TC</span> <span class="title-sub">| Smart Money Concepts</span></h1>
     </div>
 
-    <!-- Animation applied here -->
     <section class="glass concept-card animate-glow">
         <h2>What is Smart Money?</h2>
         <p>Smart Money Concepts (SMC) focus on identifying the footprint of institutional investors—banks, hedge funds, and market makers—who have the capital to move the market. Instead of relying on traditional retail indicators, SMC analyzes order flow and liquidity.</p>
