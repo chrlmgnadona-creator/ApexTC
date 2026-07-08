@@ -39,10 +39,10 @@
         .title-main { font-size: 2.5em; margin: 0; }
         .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
 
-        label { display: block; margin-top: 15px; color: #a0aec0; }
+        label { display: block; margin-top: 15px; color: #a0aec0; font-size: 0.9em; }
         input { 
-            width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: 1px solid #4a5568; 
-            background: rgba(0,0,0,0.2); color: white; box-sizing: border-box;
+            width: 100%; padding: 14px; margin-top: 5px; border-radius: 8px; border: 1px solid #4a5568; 
+            background: rgba(0,0,0,0.2); color: white; box-sizing: border-box; font-size: 16px; /* 16px prevents iOS zoom on focus */
         }
         .result-box { margin-top: 25px; padding: 20px; background: rgba(245, 179, 1, 0.1); border-radius: 8px; border-left: 4px solid #f5b301; }
 
@@ -51,6 +51,8 @@
             .header-container { gap: 10px; }
             .back-arrow { font-size: 40px; }
             body { padding: 10px; }
+            .glass { padding: 15px; }
+            input { padding: 12px; } /* Slightly tighter padding for smaller screens */
         }
     </style>
 </head>
