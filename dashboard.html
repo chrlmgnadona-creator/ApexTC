@@ -9,6 +9,21 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         if (localStorage.getItem('isLoggedIn') !== 'true') { window.location.href = 'signup.html'; }
+        
+        // Scroll restoration logic
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', () => {
+            const savedScroll = localStorage.getItem('dashboardScroll');
+            if (savedScroll) {
+                window.scrollTo(0, parseInt(savedScroll));
+                localStorage.removeItem('dashboardScroll');
+            }
+        });
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('dashboardScroll', window.scrollY);
+        });
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -29,11 +44,17 @@
             <a href="simulator.html" class="glass px-4 py-2 rounded-lg text-xs bg-amber-500/10 border-amber-500/30 text-amber-500 hover:bg-amber-500/20 font-bold transition active:scale-95 no-underline">
                 <i data-lucide="play-circle" class="w-4 h-4 inline mr-1"></i> Open Simulator
             </a>
-            <div class="glass px-4 py-2 rounded-lg text-xs">Streak: 🔥 5 Days</div>
+            <div id="streak-display" class="glass px-4 py-2 rounded-lg text-xs">Streak: 🔥 Loading...</div>
         </div>
         <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="glass p-6 rounded-2xl flex items-center gap-4"><i data-lucide="bar-chart-3" class="text-emerald-500 w-8 h-8"></i><div><h3 class="font-bold text-sm">Market Sentiment</h3><p class="text-[10px] text-gray-400">Bullish bias based on historical volume patterns.</p></div></div>
-            <div class="glass p-6 rounded-2xl flex items-center gap-4"><i data-lucide="quote" class="text-amber-500 w-8 h-8"></i><div><h3 class="font-bold text-sm">Quote of the Day</h3><p id="quote-text" class="text-[10px] text-gray-400 italic">Loading...</p></div></div>
+            <div class="glass p-6 rounded-2xl flex items-center gap-4 border-l-4 border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                <i data-lucide="bar-chart-3" class="text-emerald-500 w-8 h-8"></i>
+                <div><h3 class="font-bold text-sm">Market Sentiment</h3><p class="text-[10px] text-gray-400">Bullish bias based on historical volume patterns.</p></div>
+            </div>
+            <div class="glass p-6 rounded-2xl flex items-center gap-4 border-l-4 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+                <i data-lucide="quote" class="text-amber-500 w-8 h-8"></i>
+                <div><h3 class="font-bold text-sm">Quote of the Day</h3><p id="quote-text" class="text-[10px] text-gray-400 italic">Loading...</p></div>
+            </div>
         </div>
         <div id="concept-grid" class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <script>
@@ -51,7 +72,7 @@
                     { title: "Fibonacci", icon: "percent", desc: "Harmonic retracement levels." },
                     { title: "Wyckoff Theory", icon: "git-merge", desc: "Accumulation and distribution." },
                     { title: "Elliott Waves", icon: "waves", desc: "Market wave cycles." },
-                    { title: "Support-Resistance", icon: "divide", desc: "Key reaction levels." },
+                    { title: "Support/Resistance", icon: "divide", desc: "Key reaction levels." },
                     { title: "Trend Trading", icon: "arrow-right", desc: "Following the path of least resistance." },
                     { title: "Mean Reversion", icon: "refresh-cw", desc: "Returning to the average." },
                     { title: "Scalping", icon: "zap", desc: "Small time-frame execution." },
@@ -130,7 +151,23 @@
             if (!lastUpdate || now - lastUpdate > 86400000) { index = (parseInt(index) + 1) % quotes.length; localStorage.setItem('currentQuoteIndex', index); localStorage.setItem('lastQuoteUpdate', now); }
             document.getElementById('quote-text').innerText = `"${quotes[index]}"`;
         }
+        function updateStreak() {
+            const today = new Date().toISOString().split('T')[0];
+            const lastVisit = localStorage.getItem('lastVisitDate');
+            let streak = parseInt(localStorage.getItem('streakCount')) || 0;
+            if (lastVisit !== today) {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toISOString().split('T')[0];
+                if (lastVisit === yesterdayStr) { streak += 1; } 
+                else if (lastVisit !== today) { streak = 1; }
+                localStorage.setItem('streakCount', streak);
+                localStorage.setItem('lastVisitDate', today);
+            }
+            document.getElementById('streak-display').innerText = `Streak: 🔥 ${streak} Days`;
+        }
         updateQuote();
+        updateStreak();
     </script>
 </body>
 </html>
