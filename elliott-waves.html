@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Elliott Wave Theory | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        ul { padding-left: 20px; color: #e2e8f0; }
+        li { margin-bottom: 15px; }
+
+        /* Wave CSS Visualization */
+        .wave-visualizer { margin-top: 30px; display: flex; align-items: flex-end; justify-content: space-around; height: 120px; border-bottom: 1px solid #4a5568; padding-bottom: 10px; }
+        .wave-point { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .dot { width: 12px; height: 12px; background: #f6ad55; border-radius: 50%; }
+        .label { font-size: 0.8em; color: #f6ad55; font-weight: bold; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Elliott Waves <span class="title-sub">FRACTAL PATTERNS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h2>Market Psychology in Cycles</h2>
+        <p>Elliott Wave Theory posits that financial markets move in repetitive cycles determined by collective investor psychology. It identifies a specific 5-wave trend pattern followed by a 3-wave corrective pattern.</p>
+
+        <div class="wave-visualizer">
+            <div class="wave-point" style="margin-bottom: 20px;"><span class="label">1</span><div class="dot"></div></div>
+            <div class="wave-point" style="margin-bottom: 10px;"><span class="label">2</span><div class="dot"></div></div>
+            <div class="wave-point" style="margin-bottom: 80px;"><span class="label">3</span><div class="dot"></div></div>
+            <div class="wave-point" style="margin-bottom: 40px;"><span class="label">4</span><div class="dot"></div></div>
+            <div class="wave-point" style="margin-bottom: 100px;"><span class="label">5</span><div class="dot"></div></div>
+        </div>
+        
+
+        <hr style="border: 0; border-top: 1px solid #4a5568; margin: 25px 0;">
+
+        <h3>The 5-3 Sequence</h3>
+        <ul>
+            <li><strong>Impulse Waves (1, 3, 5):</strong> These waves move in the direction of the main trend.</li>
+            <li><strong>Corrective Waves (2, 4):</strong> These represent temporary retracements against the main trend.</li>
+            <li><strong>ABC Correction:</strong> A 3-wave structure that typically follows the completion of the 5-wave impulse sequence.</li>
+        </ul>
+
+        <h3>Core Rules</h3>
+        <ul>
+            <li>Wave 2 can never retrace more than 100% of Wave 1.</li>
+            <li>Wave 3 is often the longest and never the shortest of the impulse waves.</li>
+            <li>Wave 4 cannot overlap with the price territory of Wave 1.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
