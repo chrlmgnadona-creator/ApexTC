@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Wyckoff Theory | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        ul { padding-left: 20px; color: #e2e8f0; }
+        li { margin-bottom: 15px; }
+
+        /* Wyckoff Phase CSS */
+        .phase-container { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+        .phase-box { padding: 15px; background: rgba(246, 173, 85, 0.1); border: 1px solid rgba(246, 173, 85, 0.3); border-radius: 8px; text-align: center; }
+        .phase-label { font-weight: bold; color: #f6ad55; display: block; margin-bottom: 5px; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+            /* Force vertical stacking on very small screens if needed */
+            .phase-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Wyckoff Theory <span class="title-sub">MARKET CYCLES</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h2>The Law of Accumulation and Distribution</h2>
+        <p>Richard Wyckoff’s theory focuses on market cycles and the interaction between supply and demand. It posits that the market is not random, but follows logical cycles driven by large institutional participants ("Composite Man").</p>
+        
+        
+
+        <hr style="border: 0; border-top: 1px solid #4a5568; margin: 25px 0;">
+
+        <h3>The Market Phases</h3>
+        <div class="phase-container">
+            <div class="phase-box"><span class="phase-label">Phase A</span>Stop Prior Trend</div>
+            <div class="phase-box"><span class="phase-label">Phase B</span>Building Cause</div>
+            <div class="phase-box"><span class="phase-label">Phase C</span>The Test</div>
+            <div class="phase-box"><span class="phase-label">Phase D</span>Trend Moves</div>
+            <div class="phase-box"><span class="phase-label">Phase E</span>Trend</div>
+        </div>
+
+        <h3>Three Fundamental Laws</h3>
+        <ul>
+            <li><strong>Law of Supply and Demand:</strong> Price rises when demand exceeds supply and falls when supply exceeds demand.</li>
+            <li><strong>Law of Cause and Effect:</strong> To have an effect, there must be a cause. Accumulation (cause) leads to a Markup (effect).</li>
+            <li><strong>Law of Effort vs. Result:</strong> Divergence between volume (effort) and price action (result) often signals a reversal.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
