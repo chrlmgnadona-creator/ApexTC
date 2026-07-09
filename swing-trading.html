@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Swing Trading | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Swing Visualizer with Connector Lines */
+        .swing-visualizer { margin-top: 20px; display: flex; gap: 40px; height: 120px; align-items: center; border-bottom: 1px solid #4a5568; position: relative; padding: 20px 0; }
+        .swing-node { width: 12px; height: 12px; background: #f6ad55; border-radius: 50%; z-index: 2; position: relative; }
+        .connector { position: absolute; height: 2px; background: rgba(246, 173, 85, 0.5); z-index: 1; transform-origin: left center; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Swing Trading <span class="title-sub">MULTI-DAY TRENDS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Capturing Market Swings</h3>
+        
+        <div class="swing-visualizer">
+            <div class="swing-node" style="margin-top: -40px;"></div>
+            <div class="swing-node" style="margin-top: 40px;"></div>
+            <div class="swing-node" style="margin-top: -30px;"></div>
+            <div class="swing-node" style="margin-top: 30px;"></div>
+            <div class="swing-node" style="margin-top: -20px;"></div>
+            </div>
+        <p>Swing trading is a style of trading that attempts to capture gains in a stock or any financial instrument over a period of a few days to several weeks. Swing traders use technical analysis to look for trading opportunities within a trend.</p>
+
+        <h3>Core Principles</h3>
+        <ul>
+            <li><strong>Timeframe:</strong> Positions are typically held for several days to weeks, reducing the stress of intraday decision-making.</li>
+            <li><strong>Risk Management:</strong> Because positions are held overnight, swing traders must be aware of "gap risk" and news events.</li>
+            <li><strong>Trend Following:</strong> Focuses on identifying the direction of the medium-term trend and entering during temporary retracements.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Fundamental Rules</h2>
+        <p>Success in swing trading requires patience to wait for the correct setup, a clear understanding of the broader market context, and the discipline to let winning trades develop over time.</p>
+    </div>
+
+</body>
+</html>
