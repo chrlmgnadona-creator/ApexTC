@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Trend Trading | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Trend Visualizer */
+        .trend-chart { margin-top: 30px; height: 150px; border-bottom: 2px solid #4a5568; position: relative; display: flex; align-items: flex-end; }
+        .trend-line { flex-grow: 1; height: 100%; background: linear-gradient(to top right, transparent, rgba(104, 211, 145, 0.4)); clip-path: polygon(0% 100%, 20% 80%, 40% 90%, 60% 50%, 80% 60%, 100% 20%); }
+        
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+            .trend-chart { height: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Trend Trading <span class="title-sub">RIDING MOMENTUM</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Trend Identification</h3>
+        <div class="trend-chart">
+            <div class="trend-line"></div>
+        </div>
+        <p>Trend trading is a strategy that attempts to capture gains through the analysis of an asset's momentum in a particular direction. The core philosophy is "the trend is your friend."</p>
+        
+        
+
+        <h3>Core Principles</h3>
+        <ul>
+            <li><strong>Higher Highs & Higher Lows:</strong> The hallmark of an established uptrend.</li>
+            <li><strong>Moving Averages:</strong> Used to smooth price data and define the trend bias.</li>
+            <li><strong>Trendlines:</strong> Diagonal support or resistance lines that contain price movement within a channel.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Risk Management in Trends</h2>
+        <p>In a trend, the biggest risk is a reversal. Always trail your stop-loss order along the trend line to protect profits while allowing the trend to develop.</p>
+    </div>
+
+</body>
+</html>
