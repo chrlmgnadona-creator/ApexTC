@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Day Trading | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Updated Day Trading UI */
+        .day-visualizer { margin-top: 20px; display: flex; gap: 8px; height: 100px; align-items: flex-end; padding: 10px; border-bottom: 1px solid #4a5568; }
+        .wick { width: 2px; background: #68d391; height: 100%; position: absolute; left: 50%; transform: translateX(-50%); }
+        .body { flex: 1; background: #68d391; border-radius: 2px; position: relative; min-height: 20px; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Day Trading <span class="title-sub">INTRADAY EXECUTION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Intraday Market Dynamics</h3>
+        
+        <div class="day-visualizer">
+            <div class="body" style="height: 40%;"><div class="wick" style="height: 60%;"></div></div>
+            <div class="body" style="height: 70%;"><div class="wick" style="height: 90%;"></div></div>
+            <div class="body" style="height: 30%;"><div class="wick" style="height: 50%;"></div></div>
+            <div class="body" style="height: 90%;"><div class="wick" style="height: 100%;"></div></div>
+            <div class="body" style="height: 60%;"><div class="wick" style="height: 80%;"></div></div>
+        </div>
+        <p>Day trading involves the buying and selling of financial instruments within the same trading day. All positions are closed before the market close to avoid overnight risk.</p>
+
+        <h3>Key Focus Areas</h3>
+        <ul>
+            <li><strong>Volatility:</strong> Day traders thrive on price fluctuations to create profit opportunities.</li>
+            <li><strong>Liquidity:</strong> Choosing highly liquid assets ensures quick entry and exit without significant slippage.</li>
+            <li><strong>Market Hours:</strong> Focus is placed on high-volume sessions, typically the market open and close.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Fundamental Rules</h2>
+        <p>Successful day trading relies on a strict trading plan, consistent risk-to-reward ratios, and the avoidance of emotional decision-making during high-volatility periods.</p>
+    </div>
+
+</body>
+</html>
