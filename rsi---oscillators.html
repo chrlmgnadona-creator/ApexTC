@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>RSI & Oscillators | Momentum</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        .math-box { margin: 20px 0; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 4px solid #f6ad55; font-family: monospace; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">RSI & Oscillators <span class="title-sub">MOMENTUM VELOCITY</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Measuring Momentum</h3>
+        
+        <p>The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements. It oscillates between 0 and 100, providing signals for potential trend reversals.</p>
+
+        <div class="math-box">
+            $$RSI = 100 - \left( \frac{100}{1 + RS} \right)$$
+            <br>
+            Where $RS = \frac{Average Gain}{Average Loss}$ over a specified period.
+        </div>
+
+        <h3>Core Oscillatory Concepts</h3>
+        <ul>
+            <li><strong>Overbought (Above 70):</strong> Indicates an asset may be overextended, suggesting a potential pullback or reversal.</li>
+            <li><strong>Oversold (Below 30):</strong> Indicates an asset may be undervalued, suggesting a potential bounce or recovery.</li>
+            <li><strong>Divergence:</strong> Occurs when the price makes a new high/low, but the RSI fails to follow, often signaling an impending trend shift.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Interpreting Momentum</h2>
+        <p>Oscillators are most effective in range-bound markets. In strong trending markets, the RSI can remain in "overbought" or "oversold" territory for extended periods. Skilled traders use RSI in conjunction with trend analysis to confirm that momentum is actually backing the price direction.</p>
+    </div>
+
+</body>
+</html>
