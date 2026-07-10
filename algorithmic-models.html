@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Algorithmic Models | Trading Systems</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Algorithm Logic UI */
+        .algo-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
+        .algo-node { background: rgba(246, 173, 85, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #f6ad55; text-align: center; }
+        .node-icon { font-size: 1.5em; margin-bottom: 10px; display: block; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+            .algo-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Algorithmic Models <span class="title-sub">AUTOMATED STRATEGY</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Systematic Execution</h3>
+        
+        <p>Algorithmic models utilize pre-defined rules, mathematical formulas, and statistical analysis to execute trades automatically at high speeds and volumes, removing human emotional bias from the decision-making process.</p>
+
+        <div class="algo-grid">
+            <div class="algo-node">
+                <span class="node-icon">📊</span>
+                <strong>Statistical</strong>
+                <p style="font-size: 0.7em;">Mean Reversion</p>
+            </div>
+            <div class="algo-node">
+                <span class="node-icon">📈</span>
+                <strong>Momentum</strong>
+                <p style="font-size: 0.7em;">Trend Following</p>
+            </div>
+            <div class="algo-node">
+                <span class="node-icon">⚖️</span>
+                <strong>Arbitrage</strong>
+                <p style="font-size: 0.7em;">Price Inefficiency</p>
+            </div>
+        </div>
+
+        <h3>Key Components</h3>
+        <ul>
+            <li><strong>Signal Generation:</strong> Technical or fundamental inputs that trigger a potential trade.</li>
+            <li><strong>Risk Filters:</strong> Automated checks for position sizing, maximum drawdowns, and portfolio exposure.</li>
+            <li><strong>Execution Engine:</strong> The logic that routes orders to the market to minimize slippage and transaction costs.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Backtesting & Validation</h2>
+        <p>An algorithm is only as good as its historical validation. Rigorous backtesting against out-of-sample data is essential to identify "over-fitting" and ensure the model remains robust in changing market conditions.</p>
+    </div>
+
+</body>
+</html>
