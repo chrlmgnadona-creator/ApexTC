@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Tape Reading | Order Flow</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Tape Visualizer */
+        .tape-container { margin-top: 20px; background: #0b1220; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.9em; height: 150px; overflow-y: hidden; border: 1px solid #4a5568; }
+        .tape-line { border-bottom: 1px solid #2d3748; padding: 4px 0; display: flex; justify-content: space-between; }
+        .text-buy { color: #68d391; }
+        .text-sell { color: #f56565; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Tape Reading <span class="title-sub">TIME & SALES</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Analyzing Order Flow</h3>
+        
+        <p>Tape reading, also known as Order Flow analysis, is the practice of observing the "Time and Sales" window to identify institutional buying or selling pressure before it manifests on a price chart.</p>
+
+        <div class="tape-container">
+            <div class="tape-line"><span class="text-buy">BUY 500 @ 150.25</span><span>14:03:01</span></div>
+            <div class="tape-line"><span class="text-buy">BUY 200 @ 150.25</span><span>14:03:02</span></div>
+            <div class="tape-line"><span class="text-sell">SELL 1000 @ 150.24</span><span>14:03:03</span></div>
+            <div class="tape-line"><span class="text-buy">BUY 300 @ 150.26</span><span>14:03:05</span></div>
+            <div class="tape-line"><span class="text-sell">SELL 200 @ 150.24</span><span>14:03:06</span></div>
+        </div>
+
+        <h3>Core Concepts</h3>
+        <ul>
+            <li><strong>Aggression:</strong> Observing whether market orders are lifting the offer (buying) or hitting the bid (selling).</li>
+            <li><strong>Absorption:</strong> When large sell orders are met by strong buying interest at a specific level, preventing price from falling.</li>
+            <li><strong>Imbalance:</strong> A significant discrepancy in volume between the buy side and the sell side, often indicating a breakout.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The Art of the Tape</h2>
+        <p>Tape reading is a skill developed through experience. It is not about looking for a static pattern, but about "feeling" the rhythm of the market and identifying when a major participant is entering or exiting a position.</p>
+    </div>
+
+</body>
+</html>
