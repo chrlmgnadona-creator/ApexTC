@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Execution Speed | Latency Dynamics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Execution Speed <span class="title-sub">LATENCY DYNAMICS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>The Impact of Latency on Fill Quality</h3>
+        
+        <p>Execution speed refers to the time elapsed between an order being sent from your platform and the moment it is filled by the exchange. In fast-moving markets, even millisecond delays can lead to "slippage," where your order is filled at a worse price than expected.</p>
+
+        <h3>Primary Latency Factors</h3>
+        <ul>
+            <li><strong>Network Latency:</strong> The physical distance and number of hops between your server and the exchange’s matching engine.</li>
+            <li><strong>Processing Latency:</strong> The time required for the exchange to receive, validate, and match your order against existing liquidity.</li>
+            <li><strong>Order Type Impact:</strong> Market orders are generally faster but prone to slippage, while limit orders provide price certainty but risk non-execution during high volatility.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Optimizing for Throughput</h2>
+        <p>For algorithmic and high-frequency strategies, reducing execution latency is a competitive necessity. This is often achieved through co-location of trading servers with exchange data centers, the use of low-latency communication protocols, and optimizing code to minimize the CPU time required to calculate and dispatch orders.</p>
+    </div>
+
+</body>
+</html>
