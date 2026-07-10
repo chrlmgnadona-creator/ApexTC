@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Portfolio Theory | Risk Management</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        .math-box { margin: 20px 0; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 4px solid #f6ad55; font-family: monospace; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Portfolio Theory <span class="title-sub">RISK DIVERSIFICATION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Optimizing Expected Returns</h3>
+        
+        <p>Modern Portfolio Theory (MPT) provides a framework for assembling a portfolio of assets to maximize expected return for a given level of risk. The core insight is that an asset's risk and return should not be assessed by itself, but by how it contributes to the overall portfolio's risk and return.</p>
+
+        <div class="math-box">
+            $$E(R_p) = \sum_{i} w_i E(R_i)$$
+            <br>
+            Where $E(R_p)$ is the expected return of the portfolio, $w_i$ is the weight of asset $i$, and $E(R_i)$ is the expected return of asset $i$.
+        </div>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Diversification:</strong> By combining assets with low or negative correlations, you can significantly reduce the unsystematic risk of a portfolio.</li>
+            <li><strong>Efficient Frontier:</strong> The set of optimal portfolios that offer the highest expected return for a defined level of risk.</li>
+            <li><strong>Risk-Adjusted Return:</strong> Evaluating performance not by absolute gains, but by how much risk was taken to achieve those gains (e.g., Sharpe Ratio).</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Strategic Application</h2>
+        <p>Portfolio theory emphasizes that you cannot eliminate risk entirely, but you can control it through asset selection. For a trader, this means that holding a group of uncorrelated trading strategies—or uncorrelated asset classes—is often superior to betting the entire account on a single "perfect" strategy.</p>
+    </div>
+
+</body>
+</html>
