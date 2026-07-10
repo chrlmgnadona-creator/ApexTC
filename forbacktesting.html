@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Backtesting | Strategy Validation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Backtest Results UI */
+        .results-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .stat-card { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-val { display: block; font-size: 1.2em; font-weight: bold; color: #f6ad55; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+            .results-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Backtesting <span class="title-sub">STRATEGY VALIDATION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Historical Performance Analysis</h3>
+        
+        <p>Backtesting is the process of testing a trading strategy on historical data to see how it would have performed. By simulating trades based on past market behavior, you can statistically assess the viability of your edge before risking real capital.</p>
+
+        <div class="results-container">
+            <div class="stat-card">
+                <span class="stat-val">42.5%</span>
+                <span>Win Rate</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">1.85</span>
+                <span>Profit Factor</span>
+            </div>
+        </div>
+
+        <h3>Critical Considerations</h3>
+        <ul>
+            <li><strong>Data Quality:</strong> Garbage in, garbage out. Ensure your historical data is accurate and reflects actual market conditions.</li>
+            <li><strong>Slippage & Commissions:</strong> Failure to account for execution costs often leads to overly optimistic results.</li>
+            <li><strong>Overfitting:</strong> Avoid optimizing your strategy too perfectly for a specific past period, which may cause it to fail in future market cycles.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Validation Workflow</h2>
+        <p>A robust backtest involves <strong>In-Sample testing</strong> (the data used to build the rules) and <strong>Out-of-Sample testing</strong> (testing on data the strategy has never "seen" before) to ensure statistical significance.</p>
+    </div>
+
+</body>
+</html>
