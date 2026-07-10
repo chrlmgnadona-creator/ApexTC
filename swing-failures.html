@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Swing Failures | Reversal Patterns</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Swing Failures <span class="title-sub">REVERSAL PATTERNS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Detecting Exhaustion</h3>
+        
+        <p>A Swing Failure Pattern (SFP) occurs when price attempts to break above a previous swing high (or below a previous swing low) but fails to maintain that level, quickly reversing back into the previous range. This is a primary indicator of liquidity trapping and trend exhaustion.</p>
+
+        <h3>Core Mechanics</h3>
+        <ul>
+            <li><strong>The Trap:</strong> Retail traders often place stop-losses just beyond clear swing highs/lows. Large institutions "sweep" these levels to fill their orders.</li>
+            <li><strong>The Rejection:</strong> If price cannot find follow-through momentum after sweeping these liquidity zones, the reversal is often swift and sharp.</li>
+            <li><strong>Confirmation:</strong> An SFP is generally confirmed by a candlestick close back inside the previous swing range, often accompanied by increased volume.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Strategic Application</h2>
+        <p>SFPs are high-probability setups when they align with higher-timeframe areas of interest (e.g., support/resistance or supply/demand zones). By focusing on where "everyone else" is likely to have their stop-losses, you can identify the exact points where smart money is likely to create a reversal.</p>
+    </div>
+
+</body>
+</html>
