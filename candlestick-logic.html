@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Candlestick Logic | Financial Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Logic Visualizer */
+        .logic-container { margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-end; height: 120px; padding-bottom: 20px; border-bottom: 1px solid #4a5568; }
+        .candle-stick { width: 30px; position: relative; background: #68d391; }
+        .wick { position: absolute; left: 50%; width: 4px; background: #68d391; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Candlestick Logic <span class="title-sub">PRICE ACTION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Decoding Market Sentiment</h3>
+        
+        <p>Candlesticks are a visual representation of price movement over a specific period. They provide four key pieces of data: the Open, High, Low, and Close (OHLC). The "logic" behind them lies in understanding the battle between buyers and sellers.</p>
+
+        <div class="logic-container">
+            <div class="candle-stick" style="height: 60%;"><div class="wick" style="height: 100%; top: -20px;"></div></div>
+            <div class="candle-stick" style="height: 80%; background: #f56565;"><div class="wick" style="height: 120%; top: -10px;"></div></div>
+            <div class="candle-stick" style="height: 40%;"><div class="wick" style="height: 140%; top: -20px;"></div></div>
+        </div>
+
+        <h3>The Anatomy of Logic</h3>
+        <ul>
+            <li><strong>Body Size:</strong> Indicates the strength of the move. A large body suggests dominant momentum.</li>
+            <li><strong>Wick Length:</strong> Represents rejection. Long wicks show that buyers or sellers were pushed back from price extremes.</li>
+            <li><strong>Color:</strong> Green (or white) signifies buying pressure, while red (or black) signifies selling pressure.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Context Matters</h2>
+        <p>A candlestick in isolation is just noise. Candlestick logic only becomes powerful when it is interpreted in the context of the overall trend, support/resistance levels, and volume.</p>
+    </div>
+
+</body>
+</html>
