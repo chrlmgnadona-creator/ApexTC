@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>News Filtering | Market Intel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Filter UI */
+        .filter-container { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+        .filter-row { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255, 255, 255, 0.05); border-radius: 6px; }
+        .status-pill { padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: bold; }
+        .active { background: #68d391; color: #0b1220; }
+        .inactive { background: #4a5568; color: #cbd5e0; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">News Filtering <span class="title-sub">SIGNAL VS NOISE</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Managing Market Information</h3>
+        
+        <p>In the digital age, financial markets are flooded with data. News filtering is the process of stripping away "noise" (irrelevant information) to isolate the "signals" (market-moving events) that require immediate action.</p>
+
+        <div class="filter-container">
+            <div class="filter-row">
+                <span>Central Bank Statements</span>
+                <span class="status-pill active">HIGH IMPACT</span>
+            </div>
+            <div class="filter-row">
+                <span>Earnings Reports</span>
+                <span class="status-pill active">HIGH IMPACT</span>
+            </div>
+            <div class="filter-row">
+                <span>General Commentary</span>
+                <span class="status-pill inactive">LOW IMPACT</span>
+            </div>
+        </div>
+
+        <h3>Filtering Strategies</h3>
+        <ul>
+            <li><strong>Categorization:</strong> Grouping news by asset class, sector, or geographic impact.</li>
+            <li><strong>Source Credibility:</strong> Prioritizing primary sources (official government releases) over secondary analysis.</li>
+            <li><strong>Timing Filters:</strong> Ignoring historical data in favor of real-time developments that affect current session volatility.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The Importance of Context</h2>
+        <p>A news event's impact is not absolute; it is relative to market expectations. Filtering requires not just knowing the news, but understanding whether the market has already "priced in" the outcome.</p>
+    </div>
+
+</body>
+</html>
