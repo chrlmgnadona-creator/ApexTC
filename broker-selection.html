@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Broker Selection | Infrastructure</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Broker Selection <span class="title-sub">INFRASTRUCTURE</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Evaluating Trading Counterparties</h3>
+        
+        <p>Selecting the right broker is a critical infrastructure decision that impacts your net profitability and operational efficiency. The choice depends heavily on your specific trading style—whether you are a high-frequency algorithmic trader or a long-term position holder.</p>
+
+        <h3>Critical Evaluation Factors</h3>
+        <ul>
+            <li><strong>Execution Model:</strong> Distinguish between ECN (Electronic Communication Network) brokers, which provide direct market access, and Market Makers, which may act as the counterparty to your trades.</li>
+            <li><strong>Fee Structure:</strong> Analyze the total cost of ownership, including commissions per trade, spread width, and hidden costs like withdrawal or inactivity fees.</li>
+            <li><strong>Technology & API:</strong> Assess the stability, latency, and documentation of the broker’s API, which is essential if you plan to automate your strategy execution.</li>
+            <li><strong>Regulation & Custody:</strong> Verify the jurisdiction of the broker and the segregation of client funds to ensure asset security.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Balancing Cost and Quality</h2>
+        <p>Low-cost brokers are attractive, but they often sacrifice execution speed or liquidity quality, leading to "hidden" costs through slippage. The optimal broker is the one that balances a transparent fee structure with the technical performance necessary to execute your strategy as intended, without compromise.</p>
+    </div>
+
+</body>
+</html>
