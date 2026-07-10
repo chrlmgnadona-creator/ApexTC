@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Gap Trading | Market Anomalies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Gap Visualizer */
+        .chart-visual { 
+            margin-top: 20px; 
+            height: 150px; 
+            border-left: 2px solid #4a5568;
+            border-bottom: 2px solid #4a5568;
+            position: relative; 
+            display: flex; 
+            align-items: flex-end;
+            padding-bottom: 5px;
+        }
+        .gap-path {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                #68d391 40%, 
+                transparent 40% 60%, 
+                #68d391 60%
+            );
+            clip-path: polygon(0 60%, 40% 60%, 40% 40%, 60% 40%, 60% 20%, 100% 20%);
+        }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Gap Trading <span class="title-sub">PRICE ANOMALIES</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Understanding Price Gaps</h3>
+        
+        <p>A price gap is an empty space on a chart where no trading has occurred, typically occurring between the close of one session and the open of the next due to news, earnings, or major economic events.</p>
+
+        <div class="chart-visual">
+            <div class="gap-path"></div>
+        </div>
+
+        <h3>Types of Gaps</h3>
+        <ul>
+            <li><strong>Breakaway Gap:</strong> Signals the start of a new trend, occurring after a period of consolidation.</li>
+            <li><strong>Runaway Gap (Measuring Gap):</strong> Occurs during a strong trend, indicating high conviction and momentum.</li>
+            <li><strong>Exhaustion Gap:</strong> Appears at the end of a trend, signaling that the move has run out of steam and a reversal may follow.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The "Gap Fill" Theory</h2>
+        <p>Many traders follow the "gap fill" hypothesis, which suggests that markets have a tendency to move back to the price level where the gap originated, effectively "filling" the empty space as sentiment normalizes.</p>
+    </div>
+
+</body>
+</html>
