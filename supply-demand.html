@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Supply & Demand | Market Equilibrium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Accurate Supply and Demand Graph */
+        .sd-graph {
+            width: 250px;
+            height: 250px;
+            border-left: 2px solid #a0aec0;
+            border-bottom: 2px solid #a0aec0;
+            position: relative;
+            margin: 30px auto;
+        }
+        .axis-label { position: absolute; font-size: 0.8em; color: #a0aec0; }
+        .y-axis { top: -20px; left: -40px; }
+        .x-axis { bottom: -30px; right: -50px; }
+        
+        .supply-curve {
+            width: 200px; height: 2px; background: #f56565;
+            position: absolute; bottom: 50px; left: 0;
+            transform: rotate(-35deg); transform-origin: left bottom;
+        }
+        .demand-curve {
+            width: 200px; height: 2px; background: #68d391;
+            position: absolute; top: 50px; left: 0;
+            transform: rotate(35deg); transform-origin: left top;
+        }
+        .equilibrium-point {
+            width: 10px; height: 10px; background: #f6ad55;
+            border-radius: 50%; position: absolute;
+            top: 120px; left: 110px;
+        }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Supply & Demand <span class="title-sub">MARKET EQUILIBRIUM</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Foundations of Price Action</h3>
+        
+        
+
+[Image of economic supply and demand curve model]
+
+
+        <div class="sd-graph">
+            <span class="axis-label y-axis">Price</span>
+            <span class="axis-label x-axis">Quantity</span>
+            <div class="supply-curve"></div>
+            <div class="demand-curve"></div>
+            <div class="equilibrium-point"></div>
+        </div>
+
+        <p>Supply and demand is the fundamental economic model that determines the price of any asset. Price moves toward a point of equilibrium where the quantity supplied equals the quantity demanded.</p>
+
+        <h3>Core Concepts</h3>
+        <ul>
+            <li><strong>Supply Zones:</strong> Areas on a chart where selling pressure is high, often resulting in a downward reversal or pause in an uptrend.</li>
+            <li><strong>Demand Zones:</strong> Areas where buying pressure is high, often resulting in upward price rejection or the initiation of a new trend.</li>
+            <li><strong>Equilibrium:</strong> The state where buy and sell orders are balanced, leading to range-bound price action.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Identifying Imbalances</h2>
+        <p>Trading based on supply and demand focuses on identifying zones where price has moved aggressively away from a level. This aggressive movement indicates an imbalance, suggesting that future orders at that same level may encounter similar exhaustion or initiation forces.</p>
+    </div>
+
+</body>
+</html>
