@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Arbitrage | Market Efficiency</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        .viz-box { margin: 20px 0; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; text-align: center; border: 1px solid #4a5568; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Arbitrage <span class="title-sub">PRICE INEFFICIENCIES</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Exploiting Market Discrepancies</h3>
+        
+        
+        
+        <p>Arbitrage is the practice of taking advantage of a price difference between two or more markets. It involves the simultaneous purchase and sale of an asset in different markets to profit from a tiny difference in the asset's listed price.</p>
+
+        <div class="viz-box">
+            <strong>The Formula:</strong><br>
+            $$Profit = (Price_{High} - Price_{Low}) \times Quantity - TransactionCosts$$
+        </div>
+
+        <h3>Common Arbitrage Types</h3>
+        <ul>
+            <li><strong>Spatial Arbitrage:</strong> Buying an asset in one geographic location and selling it in another.</li>
+            <li><strong>Triangular Arbitrage:</strong> Exploiting exchange rate discrepancies between three different currencies.</li>
+            <li><strong>Statistical Arbitrage:</strong> Using complex mathematical models to identify temporary price deviations between correlated assets.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The Role in Market Efficiency</h2>
+        <p>Arbitrageurs are essential to market health. By constantly seeking out and closing price gaps, they ensure that assets are priced consistently across different platforms, ultimately driving markets toward a state of equilibrium.</p>
+    </div>
+
+</body>
+</html>
