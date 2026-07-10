@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Funding Rates | Derivative Mechanics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Funding Rate Visualizer */
+        .funding-meter { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border: 1px solid #4a5568; }
+        .rate-value { font-size: 2em; font-weight: bold; color: #68d391; }
+        .indicator-bar { height: 8px; width: 100%; background: #2d3748; border-radius: 4px; margin-top: 10px; overflow: hidden; }
+        .progress { height: 100%; width: 65%; background: #f6ad55; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Funding Rates <span class="title-sub">PERPETUAL SWAPS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Market Sentiment Equilibrium</h3>
+        <p>Funding rates are periodic payments either to traders that are long or short based on the difference between perpetual contract markets and spot prices. They ensure the derivative price stays anchored to the underlying asset.</p>
+
+        <div class="funding-meter">
+            <div>
+                <div class="rate-value">+0.0125%</div>
+                <div style="font-size: 0.8em; color: #a0aec0;">Current 8h Rate</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-weight: bold;">Bullish Bias</div>
+                <div style="font-size: 0.8em; color: #a0aec0;">Longs paying Shorts</div>
+            </div>
+        </div>
+        <div class="indicator-bar"><div class="progress"></div></div>
+
+        <h3>Key Mechanics</h3>
+        <ul>
+            <li><strong>Positive Rate:</strong> Longs pay shorts. Indicates market is bullish; leverage is skewed to the upside.</li>
+            <li><strong>Negative Rate:</strong> Shorts pay longs. Indicates market is bearish; leverage is skewed to the downside.</li>
+            <li><strong>Mean Reversion:</strong> Extremely high or low rates often signal a potential local top or bottom due to excessive leverage.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Trading Implications</h2>
+        <p>Savvy traders track funding rates to identify "crowded trades." When funding reaches extreme levels, it often precedes a violent "long squeeze" or "short squeeze" as the market forces over-leveraged participants to close positions.</p>
+    </div>
+
+</body>
+</html>
