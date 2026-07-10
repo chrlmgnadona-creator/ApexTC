@@ -111,7 +111,7 @@
                     { title: "Stop-Loss Logic", icon: "stop-circle", desc: "Defining invalidation points." }
                 ];
                 concepts.forEach(c => { 
-                    const id = c.title.toLowerCase().replace(/\s+/g, '-');
+                    const id = c.title.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-');
                     document.write(`<a href="${id}.html" class="glass p-4 rounded-xl concept-card cursor-pointer flex flex-col justify-between transition-transform active:scale-95"><div><i data-lucide="${c.icon}" class="text-amber-500 mb-2"></i><h3 class="text-sm font-bold">${c.title}</h3><p class="text-[10px] text-gray-400 mt-1">${c.desc}</p></div></a>`); 
                 });
             </script>
