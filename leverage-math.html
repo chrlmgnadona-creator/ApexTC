@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Leverage Math | Risk Dynamics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        .math-box { margin: 20px 0; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 4px solid #f6ad55; font-family: monospace; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Leverage Math <span class="title-sub">RISK AMPLIFICATION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>The Mechanics of Margin</h3>
+        <p>Leverage allows traders to control large positions with a relatively small amount of capital. While this amplifies potential returns, it mathematically accelerates the proximity of your liquidation point.</p>
+
+        <div class="math-box">
+            $$LiquidationPrice = EntryPrice \times \left(1 \pm \frac{1}{Leverage}\right)$$
+            <br>
+            $$ROI_{Leveraged} = ROI_{Asset} \times Leverage$$
+        </div>
+
+        <h3>The Asymmetry of Loss</h3>
+        <p>It is vital to understand that a loss is not recouped linearly when using leverage. As leverage increases, the percentage gain required to recover from a percentage loss grows exponentially.</p>
+        
+        <ul>
+            <li><strong>2x Leverage:</strong> A 25% drop results in a 50% loss.</li>
+            <li><strong>10x Leverage:</strong> A 10% drop results in a 100% loss (Total Liquidation).</li>
+            <li><strong>The "Volatility Tax":</strong> High leverage makes positions extremely sensitive to minor market noise, often triggering stop-losses or liquidations before a trend can play out.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>Risk Awareness</h2>
+        <p>Always calculate your <strong>Distance to Liquidation</strong> before entering a trade. If the percentage move required to trigger a liquidation is within the normal daily volatility range of the asset, the position is mathematically over-leveraged regardless of the trade thesis.</p>
+    </div>
+
+</body>
+</html>
