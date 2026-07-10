@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Breakouts | Price Action</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Breakout Visualizer */
+        .chart-visual { 
+            margin-top: 20px; 
+            height: 150px; 
+            border-bottom: 2px dashed #f6ad55; 
+            border-left: 2px solid #4a5568; 
+            position: relative; 
+            display: flex; 
+            align-items: flex-end;
+            padding-bottom: 5px;
+        }
+        .price-path {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                #68d391 60%, 
+                #68d391 60% 70%, 
+                #f6ad55 70% 75%, 
+                #f6ad55 75% 100%
+            );
+            clip-path: polygon(0 60%, 60% 60%, 70% 40%, 100% 20%);
+        }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Breakouts <span class="title-sub">MOMENTUM SHIFTS</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Capitalizing on Volatility</h3>
+        
+        <p>A breakout occurs when an asset's price moves outside a defined support or resistance level with increased volume. It signals a shift in market sentiment and the potential start of a new trend.</p>
+
+        <div class="chart-visual">
+            <div class="price-path"></div>
+        </div>
+
+        <h3>Key Indicators</h3>
+        <ul>
+            <li><strong>Volume Confirmation:</strong> A true breakout is almost always accompanied by a surge in trading volume.</li>
+            <li><strong>Support/Resistance Levels:</strong> The more times a level has been tested, the more significant the breakout when it finally fails.</li>
+            <li><strong>Volatility Expansion:</strong> A sudden increase in price range often signals that the market is beginning a trending phase.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The "Fakeout" Warning</h2>
+        <p>Not all breakouts hold. Many price moves cross a level only to snap back quickly. Traders often look for a "retest" of the broken level, confirming it has flipped from resistance to support (or vice-versa), to filter out false signals.</p>
+    </div>
+
+</body>
+</html>
