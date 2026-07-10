@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>Hedging | Risk Management</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #FFFFFF; 
+            width: 100%;
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            background: linear-gradient(rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.85)), url('everest.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            border-radius: 12px; 
+        }
+        
+        .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .back-arrow { font-size: 72px; text-decoration: none; color: #f6ad55; font-weight: bold; line-height: 1; flex-shrink: 0; }
+        
+        h1, h2, h3 { color: #f6ad55; }
+        .title-main { font-size: 2.5em; margin: 0; }
+        .title-sub { font-size: 0.6em; color: #a0aec0; vertical-align: middle; }
+
+        /* Hedging Visualizer */
+        .hedge-diagram { margin-top: 20px; height: 120px; border-bottom: 2px solid #4a5568; display: flex; align-items: flex-end; gap: 20px; justify-content: center; }
+        .bar { width: 40px; background: #68d391; }
+        .offset-bar { background: #f56565; }
+
+        @media (max-width: 600px) {
+            .title-main { font-size: 1.5em; }
+            .header-container { gap: 10px; }
+            .back-arrow { font-size: 40px; }
+            body { padding: 10px; }
+            .glass { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="dashboard.html" class="back-arrow">&larr;</a>
+        <div>
+            <h1 class="title-main">Hedging <span class="title-sub">RISK MITIGATION</span></h1>
+        </div>
+    </div>
+
+    <div class="glass">
+        <h3>Protecting Against Adverse Moves</h3>
+        
+        <p>Hedging is a risk management strategy employed to offset losses in investments by taking an opposite position in a related asset. The goal is to reduce volatility and protect your portfolio from unfavorable price movements.</p>
+
+        <div class="hedge-diagram">
+            <div class="bar" style="height: 80%;"></div>
+            <div class="bar offset-bar" style="height: 40%;"></div>
+        </div>
+
+        <h3>Core Strategies</h3>
+        <ul>
+            <li><strong>Options Hedging:</strong> Using puts to protect against a decline in the value of an existing long equity position.</li>
+            <li><strong>Diversification:</strong> Allocating capital across non-correlated assets to ensure that a decline in one sector is offset by stability in another.</li>
+            <li><strong>Futures Contracts:</strong> Locking in a price for an asset today to mitigate the risk of price fluctuation in the future.</li>
+        </ul>
+    </div>
+
+    <div class="glass">
+        <h2>The Cost-Benefit Tradeoff</h2>
+        <p>Hedging is rarely "free." While it provides protection, it often limits potential upside. The key to successful hedging is not eliminating all risk, but managing it to a level where the portfolio remains resilient to extreme market events.</p>
+    </div>
+
+</body>
+</html>
