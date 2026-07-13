@@ -68,10 +68,10 @@
                 <div class="pt-4 border-t border-white/10">
                     <h3 class="text-[10px] uppercase font-bold text-gray-500 mb-3">Analysis Tools</h3>
                     <div class="grid grid-cols-2 gap-2">
-                        <button class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="trending-up" class="w-4 h-4"></i></button>
-                        <button class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="percent" class="w-4 h-4"></i></button>
-                        <button class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="minus" class="w-4 h-4"></i></button>
-                        <button class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="equal" class="w-4 h-4"></i></button>
+                        <button id="tool-trend" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="trending-up" class="w-4 h-4"></i></button>
+                        <button id="tool-measure" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="percent" class="w-4 h-4"></i></button>
+                        <button id="tool-horiz" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                        <button id="tool-cross" class="p-2 glass rounded hover:bg-white/10 flex justify-center"><i data-lucide="equal" class="w-4 h-4"></i></button>
                     </div>
                 </div>
 
@@ -100,6 +100,7 @@
         lucide.createIcons();
         let tvWidget;
         let trades = 0;
+        let balance = 10000;
 
         function toggleFullscreen() { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
         function setTF(tf) { tvWidget.chart().setSymbol(tvWidget.chart().symbol(), tf); }
@@ -111,17 +112,22 @@
         }
 
         function logTrade(type) {
+            const vol = parseFloat(document.getElementById('vol').value);
             trades++;
+            balance = type === 'BUY' ? balance - (vol * 10) : balance + (vol * 10);
+            
             const log = document.getElementById('trade-log');
             const entry = document.createElement('div');
             entry.className = "log-entry text-gray-300";
-            entry.innerHTML = `<span class="${type === 'BUY' ? 'text-emerald-500' : 'text-red-500'} font-bold">${type}</span> at market price.`;
+            entry.innerHTML = `<span class="${type === 'BUY' ? 'text-emerald-500' : 'text-red-500'} font-bold">${type}</span> ${vol} units.`;
             log.prepend(entry);
             document.getElementById('trade-count').innerText = trades;
+            document.getElementById('bal').innerText = `$${balance.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
         }
 
         function resetData() {
             trades = 0;
+            balance = 10000;
             document.getElementById('trade-count').innerText = "0";
             document.getElementById('trade-log').innerHTML = "";
             document.getElementById('bal').innerText = "$10,000.00";
@@ -130,6 +136,12 @@
         document.getElementById('pairSelect').addEventListener('change', (e) => loadChart(e.target.value));
         document.getElementById('buy-btn').onclick = () => logTrade('BUY');
         document.getElementById('sell-btn').onclick = () => logTrade('SELL');
+        
+        // Tool buttons
+        document.getElementById('tool-trend').onclick = () => tvWidget.chart().executeActionById("drawingToolbarAction");
+        document.getElementById('tool-measure').onclick = () => tvWidget.chart().executeActionById("measureAction");
+        document.getElementById('tool-horiz').onclick = () => tvWidget.chart().executeActionById("horizontalLineAction");
+        document.getElementById('tool-cross').onclick = () => tvWidget.chart().executeActionById("crosshairAction");
 
         loadChart("BITSTAMP:BTCUSD");
     </script>
