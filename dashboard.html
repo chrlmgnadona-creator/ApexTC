@@ -15,6 +15,9 @@
             history.scrollRestoration = 'manual';
         }
         window.addEventListener('load', () => {
+            // Force scroll to top on page load
+            window.scrollTo(0, 0);
+            
             const savedScroll = localStorage.getItem('dashboardScroll');
             if (savedScroll) {
                 window.scrollTo(0, parseInt(savedScroll));
